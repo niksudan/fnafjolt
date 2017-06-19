@@ -1,0 +1,15 @@
+{
+  "name": "fnafjolt",
+  "version": "2.0.0",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "got": "^7.0.0",
+    "node-base64-image": "^1.0.3",
+    "pick-random": "^2.0.0",
+    "string-similarity": "^1.2.0",
+    "twitter": "^1.7.0"
+  },
+  "scripts": {
+    "start": "node ./src"
+  }
+}
