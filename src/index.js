@@ -15,7 +15,7 @@ const client = new Twitter({
 });
 
 /**
- * Load the 40 newest games of #fnaf
+ * Load 20 games of #fnaf
  * @return {Promise<Array>}
  */
 const loadGames = () => {
@@ -23,7 +23,7 @@ const loadGames = () => {
     const games = [];
     got(process.env.GAMEJOLT_URL).then((response) => {
       const payload = JSON.parse(response.body);
-      resolve(payload.payload.games);
+      resolve(payload.payload.games.slice(0, 20));
     });
   }).catch(() => {
     resolve([]);
@@ -31,7 +31,7 @@ const loadGames = () => {
 }
 
 /**
- * Load the 20 newest tweets of @FNAFJOLT
+ * Load the last 20 tweets from @FNAFJOLT
  * @return {Promise<Array>}
  */
 const loadTweets = () => {
